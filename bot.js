@@ -1,13 +1,21 @@
 const Discord = require('discord.js');
+
 const client = new Discord.Client();
+
 const ytdl = require('ytdl-core');
+
 const request = require('request');
+
 const fs = require('fs');
+
 const getYoutubeID = require('get-youtube-id');
+
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+
 const prefix = '3';
+
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
 });
@@ -266,17 +274,10 @@ if (message.content.startsWith(prefix + 'setstream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/sytra_ayman");
     message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
 } else
- 
-if (message.content.startsWith(prefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
-  return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
-} else
 
 if (message.content.startsWith(prefix + 'setimg')) {
   client.user.setAvatar(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
 }
 });
-
 client.login(process.env.BOT_TOKEN);
